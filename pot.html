@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmad Hassan - Full Stack Web Designer</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Custom Variables & Global Styles */
+        :root {
+            --primary-color: #0077b6;
+            --primary-hover: #023e8a;
+            --bg-dark: #121212;
+            --card-bg: #1e1e1e;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            transition: all 0.3s ease-in-out;
+            background-color: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), 
+                        url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1920&q=80') center center/cover no-repeat;
+            display: flex;
+            align-items: center;
+        }
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+        }
+        .hero-subtitle {
+            color: var(--primary-color);
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        /* Custom Buttons */
+        .btn-custom {
+            background-color: var(--primary-color);
+            color: #fff;
+            border-radius: 30px;
+            padding: 12px 30px;
+            font-weight: 600;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: var(--primary-hover);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .btn-outline-custom {
+            border: 2px solid var(--primary-color);
+            color: #fff;
+            border-radius: 30px;
+            padding: 10px 28px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-outline-custom:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        /* Cards & Sections */
+        .section-padding {
+            padding: 90px 0;
+        }
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 45px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .custom-card {
+            background-color: var(--card-bg);
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 30px;
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .custom-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 119, 182, 0.2);
+        }
+
+        /* Skills Progress */
+        .progress {
+            height: 10px;
+            background-color: #2a2a2a;
+            border-radius: 5px;
+        }
+        .progress-bar {
+            background-color: var(--primary-color);
+        }
+
+        /* Contact Form */
+        .form-control {
+            background-color: var(--card-bg);
+            border: 1px solid #333;
+            color: #fff;
+            padding: 12px;
+        }
+        .form-control:focus {
+            background-color: var(--card-bg);
+            border-color: var(--primary-color);
+            color: #fff;
+            box-shadow: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            border-top: 1px solid #222;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top px-4">
+        <div class="container">
+            <a class="navbar-brand" href="#">Ahmad Hassan</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container text-center text-lg-start">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h5 class="hero-subtitle mb-3">WELCOME TO MY PORTFOLIO</h5>
+                    <h1 class="hero-title mb-3">Hi, I'm <span style="color: var(--primary-color);">Ahmad Hassan</span></h1>
+                    <h3 class="mb-4 text-light-50">Full Stack Web Designer & Developer</h3>
+                    <p class="lead text-secondary mb-4">Crafting responsive, modern, and user-friendly web solutions from front-end design to back-end architecture.</p>
+                    <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+                        <a href="#contact" class="btn btn-custom">Hire Me</a>
+                        <a href="#services" class="btn btn-outline-custom">My Services</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <h2 class="text-center section-title">About Me</h2>
+            <div class="row align-items-center mt-5">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Work Setup" class="img-fluid rounded-4 shadow">
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <h3 class="mb-3">Passionate Full Stack Web Designer</h3>
+                    <p class="text-secondary">I build visually appealing websites and robust back-end systems. My goal is to transform ideas into functional, pixel-perfect web applications.</p>
+                    <div class="row g-3 mt-3">
+                        <div class="col-6">
+                            <h5>Name:</h5>
+                            <p class="text-secondary">Ahmad Hassan</p>
+                        </div>
+                        <div class="col-6">
+                            <h5>Role:</h5>
+                            <p class="text-secondary">Full Stack Developer</p>
+                        </div>
+                        <div class="col-6">
+                            <h5>Experience:</h5>
+                            <p class="text-secondary">3+ Years</p>
+                        </div>
+                        <div class="col-6">
+                            <h5>Availability:</h5>
+                            <p class="text-secondary">Freelance / Full-time</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding bg-black">
+        <div class="container">
+            <h2 class="text-center section-title">My Services</h2>
+            <div class="row g-4 mt-2">
+                <div class="col-md-4">
+                    <div class="custom-card text-center">
+                        <i class="fa-solid fa-code fa-3x text-primary mb-3"></i>
+                        <h4>Web Development</h4>
+                        <p class="text-secondary">Building scalable, responsive, and secure web applications using modern technologies.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="custom-card text-center">
+                        <i class="fa-solid fa-paint-brush fa-3x text-primary mb-3"></i>
+                        <h4>UI/UX Web Design</h4>
+                        <p class="text-secondary">Designing intuitive user interfaces and experiences with modern layouts and CSS frameworks.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="custom-card text-center">
+                        <i class="fa-solid fa-database fa-3x text-primary mb-3"></i>
+                        <h4>Backend & APIs</h4>
+                        <p class="text-secondary">Database architecture, server-side logic development, and RESTful API integrations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding">
+        <div class="container">
+            <h2 class="text-center section-title">Technical Skills</h2>
+            <div class="row g-4 mt-3">
+                <div class="col-md-6">
+                    <label class="d-flex justify-content-between mb-2"><span>HTML5 / CSS3 / Bootstrap</span><span>95%</span></label>
+                    <div class="progress mb-4"><div class="progress-bar" style="width: 95%"></div></div>
+
+                    <label class="d-flex justify-content-between mb-2"><span>JavaScript / React</span><span>85%</span></label>
+                    <div class="progress mb-4"><div class="progress-bar" style="width: 85%"></div></div>
+                </div>
+                <div class="col-md-6">
+                    <label class="d-flex justify-content-between mb-2"><span>Node.js / Express</span><span>80%</span></label>
+                    <div class="progress mb-4"><div class="progress-bar" style="width: 80%"></div></div>
+
+                    <label class="d-flex justify-content-between mb-2"><span>Databases (MongoDB / MySQL)</span><span>75%</span></label>
+                    <div class="progress mb-4"><div class="progress-bar" style="width: 75%"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-black">
+        <div class="container">
+            <h2 class="text-center section-title">Contact Me</h2>
+            <div class="row justify-content-center mt-4">
+                <div class="col-lg-8">
+                    <form id="contactForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" placeholder="Subject" required>
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-custom w-50">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center">
+        <div class="container">
+            <p class="mb-0 text-secondary">&copy; 2026 Ahmad Hassan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Form Submit Alert Example
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Shukriya Ahmad Hassan ko paigham bhejne ka! Mein jald aap se rabta karunga.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
